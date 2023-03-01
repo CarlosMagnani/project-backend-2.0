@@ -3,7 +3,7 @@
     "rootDirs": ["src"],
     "outDir": "dist",
     "lib": ["es2020", "esnext.asynciterable"],
-    "target": "es2020",
+    "target": "ES2016",
     "module": "CommonJS",
     "moduleResolution": "node",
     "esModuleInterop": true,
