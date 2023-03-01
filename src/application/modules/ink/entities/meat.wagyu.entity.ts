@@ -1,8 +1,8 @@
-import { Entity } from "src/core/domain/Entitiy";
+import { Entity } from "../../../../core/domain/Entitiy";
 
 type WagyuProps = {
     serialNumber: number;
-    cutting: string;
+    cutting: string; 
     weight: number;
 }
 
