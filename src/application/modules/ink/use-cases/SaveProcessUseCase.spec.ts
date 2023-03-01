@@ -13,7 +13,7 @@ describe('Save process Use Case', ()=>{
     it('should serial number is greater than 0', async ()=>{
         const process = new MeatWagyu({
             ...WagyuProps,
-            serialNumber: 5
+            serialNumber: 1
         });
 
 
