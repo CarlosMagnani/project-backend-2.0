@@ -15,6 +15,7 @@
     "@babel/preset-typescript": "^7.21.0",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
+    "@types/express": "^4.17.14",
     "prisma": "^4.10.1",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.5.0",
