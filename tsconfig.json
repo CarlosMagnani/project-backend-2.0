@@ -1,45 +1,25 @@
 {
   "compilerOptions": {
-    "rootDirs": ["src"],
+    "incremental": true,
     "outDir": "dist",
-    "lib": ["es2020", "esnext.asynciterable"],
-    "target": "ES2016",
-    "module": "CommonJS",
+    "rootDirs": ["src", "tests"],
+    "target": "es2021",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "types": ["node", "jest"],
-    "declaration": true,
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"],
+      "@/tests/*": ["../tests/*"]
+    },
+    "strict": true,
+    "noImplicitOverride": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "baseUrl": "./",
-    "incremental": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "resolveJsonModule": true,
-    "strictNullChecks": true,
-    "noImplicitAny": false,
-    "strictPropertyInitialization": false,
-    "strictBindCallApply": false,
-    "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false,
-    "paths": {
-      "@application": ["src/application/index.ts"],
-      "@application/*": ["./src/application/*"],
-      "@infra": ["./src/infra/index"],
-      "@infra/*": ["./src/infra/*"],
-      "@helpers": ["./src/helpers/index"],
-      "@helpers/*": ["./src/helpers/*"],
-      "@entities": ["./src/application/entities/index"],
-      "@entities/*": ["./src/application/entities/*"],
-      "@app-types": ["./src/application/types/index"],
-      "@app-types/*": ["./src/application/types/*"],
-      "@test": ["./src/test/index"],
-      "@test/*": ["./src/test/*"]
-    }
+    "experimentalDecorators": true
   },
-  "exclude": ["node_modules"],
-  "include": ["./src/**/*.ts"]
+  "include": ["src", "tests"]
 }
