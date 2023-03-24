@@ -1,5 +1,5 @@
 import {describe, expect, it} from 'vitest';
-import { EmptyParameterError } from '../../../core/types/errors/entity.error';
+import { ParameterError } from '../../../core/types/errors/entity.error';
 import { warehouse } from './warehouse.entity';
 
 
@@ -28,7 +28,7 @@ describe('Box', ()=>{
                 ...boxProps,
                 batchNumber: '',
             });
-        }).toThrow(EmptyParameterError);
+        }).toThrow(ParameterError);
     });
 
     

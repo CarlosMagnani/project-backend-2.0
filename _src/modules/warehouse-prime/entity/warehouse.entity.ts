@@ -1,5 +1,4 @@
-import { Entity } from "../../../core/types/Entity";
-import { EmptyParameterError } from "../../../core/types/errors/entity.error";
+import { ParameterError } from "../../../core/types/errors/entity.error";
 
 type BoxProps= {
     id: number;
@@ -41,7 +40,7 @@ export class warehouse {
 
 
         if(props.batchNumber.trim()===''){
-            throw new EmptyParameterError('batchNumber');
+            throw new ParameterError('batchNumber');
         }
     }
 
