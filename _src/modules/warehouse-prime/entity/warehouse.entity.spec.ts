@@ -1,16 +1,16 @@
 import {describe, expect, it} from 'vitest';
-import { ParameterError } from '../../../core/types/errors/entity.error';
+import { DateParameter, EmptyRequireParameter} from '../../../core/types/errors/entity.error';
 import { warehouse } from './warehouse.entity';
 
 
 describe('Box', ()=>{
     const boxProps ={
         id: 1,
-        batchNumber: 342,
+        batchNumber: 'ANG342',
         packgingDate: new Date(),
         department: "Angus238",
         meatType: "Angus",
-        cutting:[{
+        cuttings:[{
             name:'ShortRib'
         },
         {
@@ -28,8 +28,25 @@ describe('Box', ()=>{
                 ...boxProps,
                 batchNumber: '',
             });
-        }).toThrow(ParameterError);
+        }).toThrow(EmptyRequireParameter);
     });
 
+    it('Should throw DateParemeterError type error if packing date over dispatch date', ()=>{
+        expect(()=>{
+            new warehouse({
+                ...boxProps,
+                packgingDate: new Date(),
+                dispatchDate: new Date('2023-03-31')
+            });
+        }).toThrow(DateParameter);
+    });
     
+    it('Should throw EmptyParameterError type error if cuttings array is null', ()=>{
+        expect(()=>{
+            new warehouse({
+                ...boxProps,
+                cuttings:[]
+            });
+        }).toThrow(EmptyRequireParameter);
+    });
 });
